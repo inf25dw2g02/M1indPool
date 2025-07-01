@@ -1,4 +1,4 @@
-![MindPool Logo](https://github.com/inf25dw2g02/MindPool-M1/raw/main/docsm1/mindpoologo.png)
+![MindPool Logo](https://github.com/inf25dw2g02/M1indPool/blob/main/docsm1/mindpoologo.png)
 
 # API Ideas Management
 
