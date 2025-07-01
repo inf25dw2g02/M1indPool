@@ -1,0 +1,19 @@
+{
+  "name": "m1-ideas-management",
+  "version": "1.0.0",
+  "description": "Repository to host the Ideas Management project developed for 'Desenvlvimento Web I', a 2^nd^ year subject at Umaia. Developed by Group 27 : [@TiagoBaganha](https://github.com/TiagoBaganha), [@JoãoSá](https://github.com/Joaosa330), [@VítorFerreira](https://github.com/Duarte35). Repositório: [Repositório](https://github.com/inf23dw1g27). ## Short theme description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.14.1",
+    "oas3-tools": "^2.2.3"
+  }
+}

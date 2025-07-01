@@ -1,0 +1,2173 @@
+{
+	"info": {
+		"_postman_id": "94ede29f-f730-4ccd-85df-060ad54899f8",
+		"name": "api_Ideas",
+		"description": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30313945"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "{UserID}",
+					"item": [
+						{
+							"name": "Retrieve User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Users/:UserID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Users",
+										":UserID"
+									],
+									"variable": [
+										{
+											"key": "UserID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Users/:UserID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Users",
+										":UserID"
+									],
+									"variable": [
+										{
+											"key": "UserID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sucess",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"User PUT sucess\",\n  \"x-content-type\": \"application/json\"\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Users/:UserID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Users",
+										":UserID"
+									],
+									"variable": [
+										{
+											"key": "UserID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Users/:UserID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Users",
+												":UserID"
+											],
+											"variable": [
+												{
+													"key": "UserID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"UserName\": \"<string>\",\n    \"UserID\": \"<long>\",\n    \"Email\": \"<string>\"\n  },\n  {\n    \"UserName\": \"<string>\",\n    \"UserID\": \"<long>\",\n    \"Email\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"UserName\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"Email\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TaskCategories",
+			"item": [
+				{
+					"name": "{CategoryID}",
+					"item": [
+						{
+							"name": "Retrieve TaskCategories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskCategories",
+										":CategoryID"
+									],
+									"variable": [
+										{
+											"key": "CategoryID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update TaskCategory",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskCategories",
+										":CategoryID"
+									],
+									"variable": [
+										{
+											"key": "CategoryID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sucess",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"TaskCategories PUT sucess\",\n  \"x-content-type\": \"application/json\"\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete TaskCategories",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskCategories",
+										":CategoryID"
+									],
+									"variable": [
+										{
+											"key": "CategoryID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskCategories/:CategoryID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskCategories",
+												":CategoryID"
+											],
+											"variable": [
+												{
+													"key": "CategoryID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve TaskCategories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/TaskCategories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"TaskCategories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of TaskCategories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/TaskCategories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskCategories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"CategoryID\": \"<long>\",\n    \"CategoryName\": \"<string>\"\n  },\n  {\n    \"CategoryID\": \"<long>\",\n    \"CategoryName\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create TaskCategories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/TaskCategories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"TaskCategories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a TaskCategories",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/TaskCategories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskCategories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"CategoryID\": \"<long>\",\n  \"CategoryName\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TaskStatus",
+			"item": [
+				{
+					"name": "{StatusID}",
+					"item": [
+						{
+							"name": "Retrieve TaskStatus",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskStatus",
+										":StatusID"
+									],
+									"variable": [
+										{
+											"key": "StatusID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update TaskStatus",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskStatus",
+										":StatusID"
+									],
+									"variable": [
+										{
+											"key": "StatusID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sucess",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"TaskStatus PUT sucess\",\n  \"x-content-type\": \"application/json\"\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete taskStatus",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskStatus",
+										":StatusID"
+									],
+									"variable": [
+										{
+											"key": "StatusID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/TaskStatus/:StatusID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"TaskStatus",
+												":StatusID"
+											],
+											"variable": [
+												{
+													"key": "StatusID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve TaskStatuses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/TaskStatus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"TaskStatus"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of TaskStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/TaskStatus",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskStatus"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"StatusID\": \"<long>\",\n    \"StatusName\": \"<string>\"\n  },\n  {\n    \"StatusID\": \"<long>\",\n    \"StatusName\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create TaskStatus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/TaskStatus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"TaskStatus"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a TaskStatus",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/TaskStatus",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"TaskStatus"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"StatusID\": \"<long>\",\n  \"StatusName\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "{TaskID}",
+					"item": [
+						{
+							"name": "Retrieve Tasks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Tasks/:TaskID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Tasks",
+										":TaskID"
+									],
+									"variable": [
+										{
+											"key": "TaskID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update Tasks",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Tasks/:TaskID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Tasks",
+										":TaskID"
+									],
+									"variable": [
+										{
+											"key": "TaskID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sucess",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Tasks PUT sucess\",\n  \"x-content-type\": \"application/json\"\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete Tasks",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Tasks/:TaskID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Tasks",
+										":TaskID"
+									],
+									"variable": [
+										{
+											"key": "TaskID",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "id not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Tasks/:TaskID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Tasks",
+												":TaskID"
+											],
+											"variable": [
+												{
+													"key": "TaskID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Tasks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"TaskID\": \"<long>\",\n    \"Title\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"DueDate\": \"<string>\",\n    \"UserID\": \"<long>\",\n    \"CategoryID\": \"<long>\",\n    \"StatusID\": \"<long>\"\n  },\n  {\n    \"TaskID\": \"<long>\",\n    \"Title\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"DueDate\": \"<string>\",\n    \"UserID\": \"<long>\",\n    \"CategoryID\": \"<long>\",\n    \"StatusID\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a Task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"TaskID\": \"<long>\",\n  \"Title\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<string>\",\n  \"UserID\": \"<long>\",\n  \"CategoryID\": \"<long>\",\n  \"StatusID\": \"<long>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "/"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

@@ -1,0 +1,796 @@
+openapi: 3.0.0
+info:
+  title: api_Ideas
+  description: REST API for Ideas Management from Group
+  contact:
+    name: João Lino
+    email: a042083@umaia.pt
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: My localhost
+    variables:
+      basePath:
+        default: /
+paths:
+  /Users:
+    get:
+      tags:
+        - UsersController
+      summary: Retrieve Users
+      operationId: retrieveUsers
+      responses:  
+        "200":
+          description: Array of Users
+          content:
+            application/json:
+              schema: 
+                type: array
+                items:
+                  $ref: "#/components/schemas/Users"
+                x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Users
+                items:
+                  $ref: "#/components/schemas/Users"
+      x-swagger-router-controller: UsersController
+    post:
+      tags:
+        - UsersController
+      summary: Create User
+      operationId: createUsers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Users"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/Users"
+      responses:
+        "200":
+          description: Create a User
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Users"
+      x-swagger-router-controller: UsersController
+
+  /Users/{UserID}:
+    get:
+      tags:
+        - UsersController
+      summary: Retrieve User
+      operationId: retrieveUser
+      parameters:
+        - name: UserID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Retrieve User id 1
+              value: 1
+            two:
+              summary: Retrieve User id 2
+              value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+        "400":
+          description: Bad Request
+        "404":
+          description: id not found
+      x-swagger-router-controller: UsersController
+    put:
+      tags:
+        - UsersController
+      summary: Update User
+      operationId: updateUsers
+      parameters:
+        - name: UserID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Update User id 1
+              value: 1
+            two:
+              summary: Update User id 2
+              value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Users"
+            example:
+              UsersExample01:
+                $ref: "#/components/examples/UsersExample01"
+              UsersExample02:
+                $ref: "#/components/examples/UsersExample02"
+        required: true
+      responses:
+        "200":
+          description: Sucess
+          content:
+            application/json:
+              schema:
+                description: User PUT sucess
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: UsersController
+    delete:
+      tags:
+        - UsersController
+      summary: Delete User
+      operationId: deleteUsers
+      parameters:
+        - name: UserID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Delete User id 1
+              value: 1
+            two:
+              summary: Delete User id 2
+              value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: UsersController
+
+  /IdeaCategories:
+    get:
+      tags:
+        - IdeaCategoriesController
+      summary: Retrieve IdeaCategories
+      operationId: retrieveIdeaCategories
+      responses:
+        "200":
+          description: Array of IdeaCategories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/IdeaCategories"
+                x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: IdeaCategories
+                items:
+                  $ref: "#/components/schemas/IdeaCategories"
+      x-swagger-router-controller: IdeaCategoriesController
+    post:
+      tags:
+        - IdeaCategoriesController
+      summary: Create IdeaCategories
+      operationId: createIdeaCategories
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IdeaCategories"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/IdeaCategories"
+      responses:
+        "200":
+          description: Create a IdeaCategories
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IdeaCategories"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/IdeaCategories"
+      x-swagger-router-controller: IdeaCategoriesController
+
+  /IdeaCategories/{CategoryID}:
+    get:
+      tags:
+        - IdeaCategoriesController
+      summary: Retrieve IdeaCategories
+      operationId: retrieveIdeaCategory
+      parameters:
+        - name: CategoryID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Retrieve IdeaCategory id 1
+              value: 1
+            two:
+              summary: Retrieve IdeaCategory id 2
+              value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IdeaCategories"
+        "400":
+          description: Bad Request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaCategoriesController
+    put:
+      tags:
+        - IdeaCategoriesController
+      summary: Update IdeaCategory
+      operationId: updateIdeaCategories
+      parameters:
+        - name: CategoryID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Update IdeaCategories id 1
+              value: 1
+            two:
+              summary: Update IdeaCategories id 2
+              value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IdeaCategories"
+            examples:
+              IdeaCategoriesExample01:
+                $ref: "#/components/examples/IdeaCategoriesExample01"
+              IdeaCategoriesExample02:
+                $ref: "#/components/examples/IdeaCategoriesExample01"
+        required: true
+      responses:
+        "200":
+          description: Sucess
+          content:
+            application/json:
+              schema:
+                description: IdeaCategories PUT sucess
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaCategoriesController
+    delete:
+      tags:
+        - IdeaCategoriesController
+      summary: Delete IdeaCategories
+      operationId: deleteIdeaCategories
+      parameters:
+        - name: CategoryID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Delete IdeaCategories id 1
+              value: 1
+            two:
+              summary: Delete IdeaCategories id 2
+              value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaCategoriesController
+
+  /IdeaStatus:
+    get:
+      tags:
+        - IdeaStatusController
+      summary: Retrieve IdeaStatuses
+      operationId: retrieveIdeaStatuses
+      responses:
+        "200":
+          description: Array of IdeaStatus
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/IdeaStatus"
+                x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: IdeaStatus
+                items:
+                  $ref: "#/components/schemas/IdeaStatus"
+      x-swagger-router-controller: IdeaStatusController
+    post:
+      tags:
+        - IdeaStatusController
+      summary: Create IdeaStatus
+      operationId: createIdeaStatus
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IdeaStatus"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/IdeaStatus"
+      responses:
+        "200":
+          description: Create a IdeaStatus
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IdeaStatus"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/IdeaStatus"
+      x-swagger-router-controller: IdeaStatusController
+
+  /IdeaStatus/{StatusID}:
+    get:
+      tags:
+        - IdeaStatusController
+      summary: Retrieve IdeaStatus
+      operationId: retrieveIdeaStatus
+      parameters:
+        - name: StatusID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Retrieve IdeaStatus StatusID 1
+              value: 1
+            two:
+              summary: Retrieve IdeaStatus StatusID 2
+              value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IdeaStatus"
+        "400":
+          description: Bad Request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaStatusController
+    put:
+      tags:
+        - IdeaStatusController
+      summary: Update IdeaStatus
+      operationId: updateIdeaStatus
+      parameters:
+        - name: StatusID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Update IdeaStatus StatusID 1
+              value: 1
+            two:
+              summary: Update IdeaStatus StatusID 2
+              value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IdeaStatus"
+            examples:
+              IdeaStatusExample01:
+                $ref: "#/components/examples/IdeaStatusExample01"
+              IdeaStatusExample02:
+                $ref: "#/components/examples/IdeaStatusExample01"
+        required: true
+      responses:
+        "200":
+          description: Sucess
+          content:
+            application/json:
+              schema:
+                description: IdeaStatus PUT sucess
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaStatusController
+    delete:
+      tags:
+        - IdeaStatusController
+      summary: Delete ideaStatus
+      operationId: deleteIdeaStatus
+      parameters:
+        - name: StatusID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Delete IdeaStatus StatusID 1
+              value: 1
+            two:
+              summary: Delete IdeaStatus StatusID 2
+              value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeaStatusController
+
+  /Ideas:
+    get:
+      tags:
+        - IdeasController
+      summary: Retrieve Ideas
+      operationId: retrieveIdeas
+      responses:
+        "200":
+          description: Array of Ideas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Ideas"
+                x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Ideas
+                items:
+                  $ref: "#/components/schemas/Ideas"
+      x-swagger-router-controller: IdeasController
+    post:
+      tags:
+        - IdeasController
+      summary: Create Idea
+      operationId: createIdeas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Ideas"
+            example:
+              IdeaID: 1
+              Title: App de Gestão de Ideias
+              Description: Desenvolver uma aplicação móvel para capturar e organizar ideias
+              CreatedDate: 2025-07-02
+              UserID: 1
+              CategoryID: 1
+              StatusID: 1
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/Ideas"
+      responses:
+        "200":
+          description: Create a Idea
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Ideas"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Ideas"
+      x-swagger-router-controller: IdeasController
+
+  /Ideas/{IdeaID}:
+    get:
+      tags:
+        - IdeasController
+      summary: Retrieve Ideas
+      operationId: retrieveIdea
+      parameters:
+        - name: IdeaID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Retrieve Ideas IdeaID 1
+              value: 1
+            two:
+              summary: Retrieve Ideas IdeaID 2
+              value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Ideas"
+        "400":
+          description: Bad Request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeasController
+    put:
+      tags:
+        - IdeasController
+      summary: Update Ideas
+      operationId: updateIdeas
+      parameters:
+        - name: IdeaID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Update Ideas IdeaID 1
+              value: 1
+            two:
+              summary: Update Ideas IdeaID 2
+              value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Ideas"
+            example:
+              IdeaID: 1
+              Title: App de Gestão de Ideias
+              Description: Desenvolver uma aplicação móvel para capturar e organizar ideias
+              CreatedDate: 2024-02-15
+              UserID: 1
+              CategoryID: 1
+              StatusID: 1
+        required: true
+      responses:
+        "200":
+          description: Sucess
+          content:
+            application/json:
+              schema:
+                description: Ideas PUT sucess
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeasController
+    delete:
+      tags:
+        - IdeasController
+      summary: Delete Ideas
+      operationId: deleteIdeas
+      parameters:
+        - name: IdeaID
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+            format: int64
+          examples:
+            one:
+              summary: Delete Ideas IdeaID 1
+              value: 1
+            two:
+              summary: Delete Ideas IdeaID 2
+              value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: IdeasController
+
+components:
+  schemas:
+    Users:
+      title: Users
+      required:
+        - UserName
+      type: object
+      properties:
+        UserID:
+          type: integer
+          format: int64
+        UserName:
+          type: string
+        Email:
+          type: string
+      additionalProperties: false
+      example:
+        UserID: 1
+        UserName: John Doe
+        Email: john.doe@example.com
+
+    IdeaCategories:
+      title: IdeaCategories
+      required:
+        - CategoryID
+      type: object
+      properties:
+        CategoryID:
+          type: integer
+          format: int64
+        CategoryName:
+          type: string
+      additionalProperties: false
+      example:
+        CategoryID: 1
+        CategoryName: Tecnologia
+
+    IdeaStatus:
+      title: IdeaStatus
+      required:
+        - StatusID
+      type: object
+      properties:
+        StatusID:
+          type: integer
+          format: int64
+        StatusName:
+          type: string
+      additionalProperties: false
+      example:
+        StatusID: 1
+        StatusName: Em Desenvolvimento
+
+    Ideas:
+      title: Ideas
+      required:
+        - IdeaID
+        - Title
+      type: object
+      properties:
+        IdeaID:
+          type: integer
+          format: int64
+        Title:
+          type: string
+        Description:
+          type: string
+        CreatedDate:
+          type: string
+        UserID:
+          type: integer
+          format: int64
+        CategoryID:
+          type: integer
+          format: int64
+        StatusID:
+          type: integer
+          format: int64
+      additionalProperties: false
+      example:
+        IdeaID: 1
+        Title: App de Gestão de Ideias
+        Description: Desenvolver uma aplicação móvel para capturar e organizar ideias
+        CreatedDate: 2024-02-15
+        UserID: 1
+        CategoryID: 1
+        StatusID: 1
+
+  examples:
+    UsersExample01:
+      value:
+        UserID: 1
+        UserName: John Doe
+        Email: John.doe@example.com
+    UsersExample02:
+      value:
+        UserID: 2
+        UserName: Jane Smith
+        Email: jane.smith@example.com
+    IdeaCategoriesExample01:
+      value:
+        CategoryID: 1
+        CategoryName: Tecnologia
+    IdeaCategoriesExample02:
+      value:
+        value:
+          CategoryID: 2
+          CategoryName: Negócios
+    IdeaStatusExample01:
+      value:
+        StatusID: 1
+        StatusName: Em Desenvolvimento
+    IdeaStatusExample02:
+      value:
+        StatusID: 2
+        StatusName: Implementada
+    IdeasExample01:
+      value:
+        IdeaID: 2
+        Title: Plataforma de Crowdfunding
+        Description: Criar uma plataforma para financiamento coletivo de projetos inovadores
+        CreatedDate: 2024-01-30
+        UserID: 2
+        CategoryID: 2
+        StatusID: 1
+    IdeasExample02:
+      value:
+        IdeaID: 3
+        Title: Sistema de IA para Análise de Dados
+        Description: Desenvolver um sistema de inteligência artificial para análise preditiva
+        CreatedDate: 2024-02-15
+        UserID: 1
+        CategoryID: 1
+        StatusID: 1
